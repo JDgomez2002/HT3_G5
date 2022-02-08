@@ -17,11 +17,25 @@ import java.io.File;
  */
 public class MainG5{
     public static void main(String[] args) {
-        Num_aleatorios n = new Num_aleatorios();
-        int[] i = n.generar_numeros();
+        FileReader r = new FileReader();
+        int[] i = r.leer_archivo();
+        System.out.println("\tDESORDENADO:");
         for(int k = 0; k<i.length ;k++){
             System.out.println((k+1)+" "+i[k]);
         }
+        System.out.println();
+
+        // QuickSort q = new QuickSort();
+        // q.quickSort(i, 10);
+
+        //BUBBLE
+        BubbleSort ob = new BubbleSort();
+        int arr[] = i;
+        ob.bubbleSort(arr);
+        System.out.println("Sorted array:");
+        ob.printArray(arr);
+
+        
     } 
 }
 
@@ -49,11 +63,13 @@ class Num_aleatorios{
 class FileReader{
     
     public int[] leer_archivo(){
-        int[] ints = new int[3000];
+        //3000 o 10
+        int longitud = 10; 
+        int[] ints = new int[longitud];
 
         try{
             
-            String i = "numeros.txt";
+            String i = "numeros2.txt";
             File myFile = new File(i);
             Scanner scan = new Scanner(myFile);
 
@@ -61,7 +77,7 @@ class FileReader{
             int o = 0;
             int indice = 0;
 
-            while((scan.hasNextLine()&&(indice<3000))){
+            while((scan.hasNextLine()&&(indice<longitud))){
                 j = scan.nextLine();
                 o = Integer.parseInt(j);
                 ints[indice] = o;

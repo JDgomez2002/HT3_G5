@@ -11,7 +11,7 @@
 
 public class QuickSort{
 
-    public static void quickSort(int data[], int n)
+    public void quickSort(int data[], int n)
     // post: the values in data[0..n-1] are in ascending order
     {
         quickSortRecursive(data,0,n-1);
