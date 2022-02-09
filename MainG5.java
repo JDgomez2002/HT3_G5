@@ -40,17 +40,15 @@ public class MainG5{
         //System.out.println("Sorted array:");
         //ob.printArray(arr);
 
-        //RadioxSort - PENDIENTE
-        //int arr[] = i;
+        //RadioxSort
         //RadixSort ra = new RadixSort();
-        //ra.radixSort(arr);
+        //ra.radixSort(i);
+        //ra.printArray(i);
 
         //GnomeSort
         //GnomeSort g = new GnomeSort();
         //g.gnomeSort(i);
-
-
-        
+    
     } 
 }
 
