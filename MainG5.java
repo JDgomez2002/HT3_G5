@@ -19,35 +19,35 @@ public class MainG5{
     public static void main(String[] args) {
         FileReader r = new FileReader();
         int[] i = r.leer_archivo();
+        int longitud = i.length;
         System.out.println("\tDESORDENADO:");
         for(int k = 0; k<i.length ;k++){
             System.out.println((k+1)+" "+i[k]);
         }
         System.out.println();
 
-        //QuickSort
-        //QuickSort q = new QuickSort();
-        //q.quickSort(i, 10);
+        // QuickSort
+        // QuickSort q = new QuickSort();
+        // q.quickSort(i, longitud);
 
         //MergeSort
-        //MergeSort m = new MergeSort();
-        //m.mergeSort(i, 10);
+        // MergeSort m = new MergeSort();
+        // m.mergeSort(i, longitud);
 
-        //BUBBLE
-        //BubbleSort ob = new BubbleSort();
-        //int arr[] = i;
-        //ob.bubbleSort(arr);
-        //System.out.println("Sorted array:");
-        //ob.printArray(arr);
+        //BUBBLE SORT
+        // BubbleSort ob = new BubbleSort();
+        // int arr[] = i;
+        // ob.bubbleSort(arr);
+        // ob.printArray(arr);
 
         //RadioxSort
-        //RadixSort ra = new RadixSort();
-        //ra.radixSort(i);
-        //ra.printArray(i);
+        // RadixSort ra = new RadixSort();
+        // ra.radixSort(i);
+        // ra.printArray(i);
 
         //GnomeSort
-        //GnomeSort g = new GnomeSort();
-        //g.gnomeSort(i);
+        // GnomeSort g = new GnomeSort();
+        // g.gnomeSort(i);
     
     } 
 }
@@ -77,7 +77,7 @@ class FileReader{
     
     public int[] leer_archivo(){
         //3000 o 10
-        int longitud = 10; 
+        int longitud = 3000; 
         int[] ints = new int[longitud];
 
         try{

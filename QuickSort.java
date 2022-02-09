@@ -59,7 +59,7 @@ public class QuickSort{
 
     public void printArray(int arr[])
     { 
-        System.out.println("ORDENADO");
+        System.out.println("QUICKSORT");
         int n = arr.length;
         for (int i=0; i<n; ++i)
             System.out.println((i+1)+" "+arr[i] + " ");
