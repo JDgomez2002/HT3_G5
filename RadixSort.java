@@ -9,7 +9,9 @@
 //Actividad: Hoja de Trabajo 3 
 //GRUPO 5
 import java.util.Vector;
+
 public class RadixSort{
+
     public static int digit(int n, int d){
         // pre: n >= 0 and d >= 0
         // post: returns the value of the dth decimal place of n
@@ -54,12 +56,22 @@ public class RadixSort{
             }
         }
     }
-     public static void radixSort(int data[]) {
+     public void radixSort(int data[]) {
      // pre: data is array of values; each is less than 1,000,000
      // post: data in the array are sorted into increasing order
         for (int i = 0; i < 6; i++)
         {
             bucketPass(data,i);
+            printArray(data);
+            
         }
+    }
+    public void printArray(int arr[])
+    { 
+        System.out.println("ORDENADO");
+        int n = arr.length;
+        for (int i=0; i<n; ++i)
+            System.out.println((i+1)+" "+arr[i] + " ");
+        System.out.println();
     }
 }

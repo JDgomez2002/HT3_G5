@@ -64,7 +64,7 @@ public class MergeSort {
         merge(data,temp,low,middle,high);
     }
 
-    void printArray(int arr[])
+    public void printArray(int arr[])
     { 
         System.out.println("ORDENADO");
         int n = arr.length;

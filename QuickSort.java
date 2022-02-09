@@ -57,7 +57,7 @@ public class QuickSort{
         quickSortRecursive(data,pivot+1,right);/* 3 - sort large */
     }
 
-    void printArray(int arr[])
+    public void printArray(int arr[])
     { 
         System.out.println("ORDENADO");
         int n = arr.length;
