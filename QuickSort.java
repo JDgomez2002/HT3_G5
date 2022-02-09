@@ -15,6 +15,7 @@ public class QuickSort{
     // post: the values in data[0..n-1] are in ascending order
     {
         quickSortRecursive(data,0,n-1);
+        printArray(data);
     }
     
     public static void swap(int data[], int i, int j)
@@ -54,5 +55,14 @@ public class QuickSort{
         pivot = partition(data,left,right); /* 1 - place pivot */
         quickSortRecursive(data,left,pivot-1); /* 2 - sort small */
         quickSortRecursive(data,pivot+1,right);/* 3 - sort large */
+    }
+
+    void printArray(int arr[])
+    { 
+        System.out.println("ORDENADO");
+        int n = arr.length;
+        for (int i=0; i<n; ++i)
+            System.out.println((i+1)+" "+arr[i] + " ");
+        System.out.println();
     }
 }

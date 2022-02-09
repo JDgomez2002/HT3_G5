@@ -25,15 +25,20 @@ public class MainG5{
         }
         System.out.println();
 
-        // QuickSort q = new QuickSort();
-        // q.quickSort(i, 10);
+        //QuickSort
+        //QuickSort q = new QuickSort();
+        //q.quickSort(i, 10);
+
+        //MergeSort
+        //MergeSort m = new MergeSort();
+        //m.mergeSort(i, 10);
 
         //BUBBLE
-        BubbleSort ob = new BubbleSort();
-        int arr[] = i;
-        ob.bubbleSort(arr);
-        System.out.println("Sorted array:");
-        ob.printArray(arr);
+        //BubbleSort ob = new BubbleSort();
+        //int arr[] = i;
+        //ob.bubbleSort(arr);
+        //System.out.println("Sorted array:");
+        //ob.printArray(arr);
 
         
     } 

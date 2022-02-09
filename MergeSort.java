@@ -11,11 +11,12 @@
 
 public class MergeSort {
     
-    public static void mergeSort(int data[], int n)
+    public void mergeSort(int data[], int n)
     // pre: 0 <= n <= data.length
     // post: values in data[0..n-1] are in ascending order
     {
         mergeSortRecursive(data,new int[n],0,n-1);
+        printArray(data);
     }
     
     private static void merge(int data[], int temp[],int low, int middle, int high)
@@ -63,4 +64,13 @@ public class MergeSort {
         merge(data,temp,low,middle,high);
     }
 
+    void printArray(int arr[])
+    { 
+        System.out.println("ORDENADO");
+        int n = arr.length;
+        for (int i=0; i<n; ++i)
+            System.out.println((i+1)+" "+arr[i] + " ");
+        System.out.println();
+    }
 }
+
