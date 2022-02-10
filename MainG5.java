@@ -67,13 +67,12 @@ class File_Reader{
             File myFile = new File(i);
             Scanner scan = new Scanner(myFile);
 
-            String num = "";
-
             while((scan.hasNextLine())&&(indice<longitud)){
                 num_actual = scan.nextInt();
                 lista_ints[indice] = num_actual;
                 indice ++;
             }
+            scan.close();
         }
         catch(Exception e){
             String s = "FileReader: leer_numeros(): "+e.getMessage();
