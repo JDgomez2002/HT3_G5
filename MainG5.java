@@ -10,99 +10,76 @@
 //GRUPO 5
 
 import java.util.*;
-import java.io.File;
+import java.io.*;
 
-/**
- * Clase MAIN
- */
-public class MainG5{
+public class MainG5 {
     public static void main(String[] args) {
-        FileReader r = new FileReader();
-        int[] i = r.leer_archivo();
+
+        File_Reader r = new File_Reader();
+        int[] i = r.leer_archivo(10);
         int longitud = i.length;
-        System.out.println("\tDESORDENADO:");
-        for(int k = 0; k<i.length ;k++){
-            System.out.println((k+1)+" "+i[k]);
+
+
+        System.out.println("\nDESORDENADO:");
+        for(int k = 0; k<longitud ;k++){
+            System.out.println(" "+i[k]);
         }
         System.out.println();
 
         // QuickSort
-        // QuickSort q = new QuickSort();
-        // q.quickSort(i, longitud);
+         QuickSort q = new QuickSort();
+         q.quickSort(i, longitud);
 
         //MergeSort
-        // MergeSort m = new MergeSort();
-        // m.mergeSort(i, longitud);
+         MergeSort m = new MergeSort();
+         m.mergeSort(i, longitud);
 
         //BUBBLE SORT
-        // BubbleSort ob = new BubbleSort();
-        // int arr[] = i;
-        // ob.bubbleSort(arr);
-        // ob.printArray(arr);
+         BubbleSort ob = new BubbleSort();
+         int arr[] = i;
+         ob.bubbleSort(arr);
+         ob.printArray(arr);
 
-        //RadioxSort
-        // RadixSort ra = new RadixSort();
-        // ra.radixSort(i);
-        // ra.printArray(i);
+        //RadixSort
+         RadixSort ra = new RadixSort();
+         ra.radixSort(i);
+         ra.printArray(i);
 
         //GnomeSort
-        // GnomeSort g = new GnomeSort();
-        // g.gnomeSort(i);
-    
-    } 
-}
+         GnomeSort g = new GnomeSort();
+         g.gnomeSort(i);
 
-class Num_aleatorios{
+        System.out.println();
 
-    public int[] generar_numeros(){
-        int[] numeros = new int[3000];
-        int n = 0;
-        for(int k = 0; k<3000 ;k++){
-            boolean encontrado = true;
-            while(encontrado){
-                Random r = new Random();
-                n = r.nextInt(3000);
-                if((n>9)&&(n<3000)){
-                    numeros[k] = n;
-                    encontrado = false;
-                }
-                
-            }
-        }
-        return numeros;
     }
 }
 
-class FileReader{
-    
-    public int[] leer_archivo(){
+class File_Reader{
+
+    public int[] leer_archivo(int longitud){
         //3000 o 10
-        int longitud = 3000; 
-        int[] ints = new int[longitud];
+        int indice, num_actual;
+        indice = 0;
+        int[] lista_ints = new int[longitud];
 
         try{
-            
-            String i = "numeros2.txt";
+            String i = "C:\\Users\\José Daniel Gómez\\Desktop\\UVG\\03 Tercer Semestre\\01 Cursos\\03 Algoritmos y Estructuras de Datos\\HT\\03\\src\\numeros2.txt";
             File myFile = new File(i);
             Scanner scan = new Scanner(myFile);
 
-            String j = "";
-            int o = 0;
-            int indice = 0;
+            String num = "";
 
-            while((scan.hasNextLine()&&(indice<longitud))){
-                j = scan.nextLine();
-                o = Integer.parseInt(j);
-                ints[indice] = o;
-                indice += 1;
+            while((scan.hasNextLine())&&(indice<longitud)){
+                num_actual = scan.nextInt();
+                lista_ints[indice] = num_actual;
+                indice ++;
             }
-
         }
         catch(Exception e){
             String s = "FileReader: leer_numeros(): "+e.getMessage();
             throw new RuntimeException(s);
         }
 
-        return ints;
+        return lista_ints;
     }
 }
