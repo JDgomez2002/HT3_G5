@@ -15,6 +15,8 @@ import java.io.*;
 public class MainG5 {
     public static void main(String[] args) {
 
+        TimeCounter clocker = new TimeCounter();
+
         File_Reader r = new File_Reader();
         int[] i = r.leer_archivo(10);
         int longitud = i.length;
@@ -26,28 +28,36 @@ public class MainG5 {
         }
         System.out.println();
 
-        // QuickSort
-         QuickSort q = new QuickSort();
-         q.quickSort(i, longitud);
+        //Medidor de tiempo
+        clocker.iniciar();
+
+        //GnomeSort
+        GnomeSort g = new GnomeSort();
+        g.gnomeSort(i);
 
         //MergeSort
-         MergeSort m = new MergeSort();
-         m.mergeSort(i, longitud);
+        MergeSort m = new MergeSort();
+        m.mergeSort(i, longitud);
+
+        // QuickSort
+        QuickSort q = new QuickSort();
+        q.quickSort(i, longitud);
+
+        //RadixSort
+        RadixSort ra = new RadixSort();
+        ra.radixSort(i);
+        ra.printArray(i);
 
         //BUBBLE SORT
          BubbleSort ob = new BubbleSort();
-         int arr[] = i;
-         ob.bubbleSort(arr);
-         ob.printArray(arr);
+        int arr[] = i;
+        ob.bubbleSort(arr);
+        ob.printArray(arr);
 
-        //RadixSort
-         RadixSort ra = new RadixSort();
-         ra.radixSort(i);
-         ra.printArray(i);
 
-        //GnomeSort
-         GnomeSort g = new GnomeSort();
-         g.gnomeSort(i);
+        //Termina medicion de tiempo
+        long l = clocker.finalizar();
+        System.out.println("Tiempo de ejecucion: "+l);
 
         System.out.println();
 
