@@ -92,3 +92,26 @@ class File_Reader{
         return lista_ints;
     }
 }
+
+class TimeCounter{
+    
+    private long startTime;
+    private long stopTime;
+    private long tiempo_total;
+
+    public TimeCounter(){
+        tiempo_total = 0;
+    }
+
+    public void iniciar(){
+        this.startTime = System.currentTimeMillis();;
+    }
+
+    public long finalizar(){
+        this.stopTime = System.currentTimeMillis();
+        this.tiempo_total = (this.stopTime - this.startTime);
+        return this.tiempo_total;
+    }
+
+
+}
